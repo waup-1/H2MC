@@ -23,7 +23,7 @@ def h2randomwalk(n, psips, d, delta_t, thread_id, iteration):
     def pot (coor_psips,d):#coordinates is a numpy array of vectors for each psip, the vectors have 6 values (3D coordinates for both electrons); d is the distance between 0 and the protons
         i = 0
         potential = [0 for x in range(len(coor_psips))] #I do not know if this is necessary; the code worked with and without it
-        for vector in coordinates:
+        for vector in coor_psips:
             r_1a = math.sqrt((vector[0]-d)**2+vector[1]**2+vector[2]**2) #distance electron1 protona
             r_1b = math.sqrt((vector[0]+d)**2+vector[1]**2+vector[2]**2) #distance electron1 protonb
             r_2a = math.sqrt((vector[3]-d)**2+vector[4]**2+vector[5]**2) #distance electron2 protona
